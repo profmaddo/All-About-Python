@@ -1,3 +1,5 @@
+from sqlalchemy import select
+
 from sqlalchemy import Column, create_engine, inspect
 from sqlalchemy import Integer
 from sqlalchemy import String
@@ -63,6 +65,13 @@ with Session(engine) as session:
         fullname="Chris Oliveira",
     )
 
-    session.add(maddo)
-    session.add(chris)
+    session.add_all([maddo, chris])
     session.commit()
+
+
+stmt = select(User).where(User.name.in_(["maddo", "chris"]))
+
+
+for user in session.scalars(stmt):
+    print(user.name)
+
