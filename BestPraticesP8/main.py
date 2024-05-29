@@ -107,6 +107,15 @@ def retorno_funcao_args(arg_one, arg_two,
                         arg_five, arg_six):
     pass
 
+def funcao_ficticia(*args):
+    pass
+
+
+vetor = []
+
+
+funcao_ficticia(vetor[1, 2, 3], {'key': 2})
+
 
 def print_hi(name):
     print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
