@@ -1,7 +1,7 @@
 # Python PEP 8 Best Pratices
-
 variavel = 0
 TOTAL = 0
+
 
 class Persona:
     def __init__(self, message):
@@ -9,28 +9,52 @@ class Persona:
         print(self.inicio)
     pass
 
+    def __set_name__(self, name):
+        self.name = name
+        print('Welcone ', self.name)
+    
 
+
+# Best Pratices
 def print_hi_with_message(name):
     pass
 
 
-# Bad pratices
+# Bad Pratices
 def printhiwithname(name):
     pass
 
 
+# Bad Pratices
 def printhiwithname(x, y, z):
     t = (x + y) / z
     pass
 
 
+# Bad Pratices
 def printhiwithname(nota1, nota2, divisor):
     t = (nota1 + nota2) / divisor
     pass
 
 
+# Best Pratices
 def media_aluno(nota1, nota2, divisor):
     t = (nota1 + nota2) / divisor
+    pass
+
+
+# Bad Pratices
+def retornofuncaoargs(
+        arg_one, arg_two,
+        arg_three, arg_four,
+        arg_five, arg_six):
+    pass
+
+
+# Best Pratices
+def retorno_funcao_args(arg_one, arg_two,
+                        arg_three, arg_four,
+                        arg_five, arg_six):
     pass
 
 
