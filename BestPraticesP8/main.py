@@ -123,7 +123,7 @@ def funcao_ficticia(*args):
 vetor = []
 
 
-funcao_ficticia(vetor[1, 2, 3], {'key': 2})
+funcao_ficticia(vetor[1, 2, 3, 4], {'key': 2})
 
 
 def print_hi(name):
