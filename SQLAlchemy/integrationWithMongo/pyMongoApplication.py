@@ -9,12 +9,12 @@ import pymongo
 # sudo apt-get install build-essential python3-dev
 
 
+def db_connection():
+    client = pymongo.MongoClient("mongodb+srv://user:secreto@clusterpymongo.topsecret.mongodb.net/")
+    pass
+
 
 def print_hi(name):
-    client = pymongo.MongoClient("mongodb+srv://user:secreto@clusterpymongo.topsecret.mongodb.net/")
-
-    VALOR = 0
-
 
     print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
 
