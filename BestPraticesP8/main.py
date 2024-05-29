@@ -1,6 +1,6 @@
 # Python PEP 8 Best Pratices
 # CRTL + Alt + L
-
+# python3 -tt main.py - Testa o código
 
 import pandas as pd
 import numpy as np
