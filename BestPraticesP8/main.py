@@ -90,7 +90,7 @@ def printhiwithname(nota1, nota2, divisor):
 # Best Pratices
 def media_aluno(nota1, nota2, divisor):
     t = (nota1 + nota2) / divisor
-    pass
+    return t
 
 
 # Bad Pratices
@@ -109,8 +109,8 @@ def retorno_funcao_args(arg_one, arg_two,
 
 
 def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
     print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+    print(f'Hi, {media_aluno(9, 10, 2)}')  # Press Ctrl+F8 to toggle the breakpoint.
 
 
 # Press the green button in the gutter to run the script.
