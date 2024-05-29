@@ -1,6 +1,26 @@
 # Python PEP 8 Best Pratices
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+from pandas import array
+from pandas import (
+    read_csv,
+    Series,
+    DataFrame,
+    HDFStore
+)
+
+
 variavel = 0
 TOTAL = 0
+
+
+lista = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+matriz = [
+    1, 2, 3,
+    4, 5, 6,
+    7, 8, 9]
 
 
 class Persona:
@@ -12,8 +32,14 @@ class Persona:
     def __set_name__(self, name):
         self.name = name
         print('Welcone ', self.name)
-    
 
+
+class JuridicPerson():
+    def __init__(self, message):
+        self.name = None
+        self.email = None
+        self.inicio = message
+    pass
 
 # Best Pratices
 def print_hi_with_message(name):
