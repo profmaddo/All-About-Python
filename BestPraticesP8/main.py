@@ -1,6 +1,15 @@
 # Python PEP 8 Best Pratices
 # CRTL + Alt + L
 # python3 -tt main.py - Testa o código
+# NetworkX - redes complexas
+# pagerank
+# Pylint
+# pycodestyle
+# pyflakes
+# flake8 - recommended
+# autopep8
+# yapf - reformata o código
+
 
 import sys
 
