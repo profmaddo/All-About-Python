@@ -2,6 +2,8 @@
 # CRTL + Alt + L
 # python3 -tt main.py - Testa o código
 
+import sys
+
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -13,6 +15,8 @@ from pandas import (
     DataFrame,
     HDFStore
 )
+
+# from caminho_pacote import function, Classe
 
 
 variavel = 0
