@@ -1,16 +1,68 @@
-# This is a sample Python script.
+from sqlalchemy import Column, create_engine, inspect
+from sqlalchemy import Integer
+from sqlalchemy import String
+from sqlalchemy import ForeignKey
+#from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import declarative_base, Session
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+from sqlalchemy.orm import relationship
+
+Base = declarative_base()
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+class User(Base):
+    __tablename__ = 'user_account'
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    name = Column(String)
+    fullname = Column(String)
+
+    address = relationship(
+        "Address", back_populates="user", cascade="all, delete, delete-orphan")
+
+    def __repr__(self):
+        return "<User(name={0}, fullname={1})>".format(self.name, self.fullname)
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+class Address(Base):
+    __tablename__ = 'user_address'
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    email_address = Column(String(30), nullable=True)
+    user_id = Column(Integer, ForeignKey('user_account.id'))
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    user = relationship("User", back_populates="address")
+
+    def __repr__(self):
+        return f"Address(email_address='{self.email_address}', user_id='{self.user_id}')"
+
+
+#print(User.__tablename__)
+
+#print(Address.__tablename__)
+
+engine = create_engine("sqlite:///persona.db")
+
+Base.metadata.create_all(engine)
+
+inpector_engine = inspect(engine)
+
+print(inpector_engine.has_table("user_address"))
+
+print(inpector_engine.get_table_names())
+
+print(inpector_engine.default_schema_name)
+
+with Session(engine) as session:
+    maddo = User(
+        name="maddo",
+        fullname="Marco Oliveira",
+    )
+
+    chris = User(
+        name="chris",
+        fullname="Chris Oliveira",
+    )
+
+    session.add(maddo)
+    session.add(chris)
+    session.commit()
