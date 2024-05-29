@@ -98,7 +98,7 @@ def retornofuncaoargs(
         arg_one, arg_two,
         arg_three, arg_four,
         arg_five, arg_six):
-    pass
+    return (arg_one + arg_two) / (arg_three + arg_four)
 
 
 # Best Pratices
