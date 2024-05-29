@@ -33,6 +33,15 @@ matriz = [
 number_one = 10
 
 
+# docstring
+"""
+    docstring em python
+"""
+
+'''
+    docstring em python
+'''
+
 class Persona:
     def __init__(self, message):
         self.inicio = message
@@ -40,6 +49,11 @@ class Persona:
     pass
 
     def __set_name__(self, name):
+        """
+        Seta o nome do persona
+        :param name: o nome do persona é definido pelo usuário
+        :return:  não há retorno
+        """
         self.name = name
         print('Welcone ', self.name)
 
