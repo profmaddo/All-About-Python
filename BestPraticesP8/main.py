@@ -1,4 +1,7 @@
 # Python PEP 8 Best Pratices
+# CRTL + Alt + L
+
+
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
