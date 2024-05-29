@@ -23,6 +23,9 @@ matriz = [
     7, 8, 9]
 
 
+number_one = 10
+
+
 class Persona:
     def __init__(self, message):
         self.inicio = message
