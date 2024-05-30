@@ -1,4 +1,5 @@
 import datetime
+import pprint
 
 import pymongo
 
@@ -44,6 +45,24 @@ def db_connection():
     print(post_id)
     print(db.orders)
     print(db.list_collection_names())
+    print(db.posts.find_one())
+    pprint.pprint(db.posts.find_one())
+
+    new_post = [{
+        "author": "Maddo 2",
+        "title": "Python for Java Developer",
+        "tags": ["Java", "Python", "MongoDB"],
+        "data": datetime.datetime.utcnow()
+    }, {
+        "author": "Maddo 3",
+        "title": "Python for Java Developer",
+        "tags": ["Java", "Python", "MongoDB"],
+        "data": datetime.datetime.utcnow()
+    }]
+
+    result = posts.insert_many(new_post)
+    print(result.inserted_ids)
+    pprint.pprint(db.posts.find_one({"author": "Maddo 3"}))
 
     pass
 
