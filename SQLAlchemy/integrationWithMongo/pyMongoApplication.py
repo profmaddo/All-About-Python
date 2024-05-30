@@ -1,4 +1,8 @@
+import datetime
+
 import pymongo
+
+
 # pip install --upgrade pymongo
 # openssl version
 # python3 -c "import requests; print(requests.get('https://www.howsmyssl.com/a/check', verify=False).json()['tls_version'])"
@@ -8,15 +12,46 @@ import pymongo
 
 # sudo apt-get install build-essential python3-dev
 
+# pip install pymongo[srv]
+
+# dnspython
+
 
 def db_connection():
-    client = pymongo.MongoClient("mongodb+srv://user:secreto@clusterpymongo.topsecret.mongodb.net/")
+    client = pymongo.MongoClient("mongodb+srv://")
+
+    db = client.test
+
+    collection = db.test_collection
+    print(db.list_collection_names)
+    print(collection.count_documents({}))
+
+    post = {
+        "author": "Maddo",
+        "title": "Python for Java Developer",
+        "tags": ["Java", "Python", "MongoDB"],
+        "data": datetime.datetime.utcnow()
+    }
+
+    posts = db.posts
+    post_id = posts.insert_one(post).inserted_id
+    print(post_id)
+    print(db.posts)
+    print(db.list_collection_names())
+
+    orders = db.orders
+    post_id = orders.insert_one(post).inserted_id
+    print(post_id)
+    print(db.orders)
+    print(db.list_collection_names())
+
     pass
 
 
 def print_hi(name):
+    db_connection()
 
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+    print('Connected to MongoDB...')  # Press Ctrl+F8 to toggle the breakpoint.
 
 
 # Press the green button in the gutter to run the script.
