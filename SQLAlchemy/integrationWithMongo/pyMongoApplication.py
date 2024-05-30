@@ -19,7 +19,7 @@ import pymongo
 
 
 def db_connection():
-    client = pymongo.MongoClient("mongodb+srv://maddoliveira:mJkjRzjiSecgXWmL@clusterpymongo.uwk8hxk.mongodb.net/")
+    client = pymongo.MongoClient("mongodb+srv://")
 
     db = client.test
 
